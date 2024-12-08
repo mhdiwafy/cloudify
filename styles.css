@@ -1,0 +1,299 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+  }
+  
+  /* Light Mode Styles */
+  body.light-mode {
+    background-color: #f9f9f9; /* Light background */
+    color: #212121; /* Dark text */
+  }
+  
+  body.light-mode .header {
+    background-color: #ffffff; /* Light header background */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  body.light-mode .nav-links {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  body.light-mode .nav-links li a {
+    color: #212121; /* Dark text links */
+  }
+  
+  body.light-mode .nav-links li a:hover {
+    color: #007bff; /* Accent color for hover */
+  }
+  
+  body.light-mode .hamburger span {
+    background-color: #212121; /* Dark hamburger menu */
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #0a0a23; /* Dark background */
+    color: #f0f0f0; /* Light text */
+  }
+  
+  body.dark-mode .header {
+    background-color: #0d0d2b; /* Dark header background */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  body.dark-mode .nav-links {
+    background-color: #1a1a3d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  body.dark-mode .nav-links li a {
+    color: #f0f0f0; /* Light text links */
+  }
+  
+  body.dark-mode .nav-links li a:hover {
+    color: #4fc3f7; /* Accent color for hover */
+  }
+  
+  body.dark-mode .hamburger span {
+    background-color: #f0f0f0; /* Light hamburger menu */
+  }
+  
+  /* Shared Styles */
+  .header {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  }
+  
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #c2e9fb); /* Multi-layered gradient */
+    color: #333; /* Dark text for better readability */
+    text-align: center;
+  }
+  
+  .hero-container {
+    background: rgba(255, 255, 255, 0.85); /* Slightly opaque white background */
+    padding: 40px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    color: #2c3e50; /* Dark color for contrast */
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: #555; /* Lighter text */
+    margin-bottom: 30px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #00bcd4, #0288d1); /* Gradient Button */
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px; /* Rounded button */
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: linear-gradient(135deg, #0288d1, #00bcd4); /* Hover effect */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+
+
+
+ /* App Card Section */
+.app-card-section {
+    padding: 50px 20px;
+
+  }
+
+/* Light Mode Background */
+body.light-mode .app-card-section {
+    background: linear-gradient(135deg, #dbe9f9, #b3cde8, #8baed8); /* Softer pastel blue tones */
+  }
+  
+  body.dark-mode .app-card-section {
+    background: linear-gradient(-135deg, #1a2a6c, #1e3c72, #2d5cad); /* Brighter dark mode gradient */
+  }
+  
+  
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: inherit; /* Adapt to light or dark mode */
+    margin-bottom: 40px;
+  }
+  
+  /* App Card Section */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider minimum size */
+    gap: 20px;
+  }
+  
+  /* Card */
+  .card {
+    background: rgba(255, 255, 255, 0.01); /* Increased transparency for glass effect */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.25); /* Subtle border */
+    backdrop-filter: blur(15px); /* Stronger blur for glass effect */
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  body.light-mode .card {
+    background: rgba(255, 255, 255, 0.8); /* Brighter for light mode */
+  }
+  
+  body.dark-mode .card {
+    background: rgba(50, 50, 70, 0.85); /* Adjusted for better contrast */
+    color: #e0e0e0;
+  }
+  
+  
+  /* Card Hover Effects */
+.card:hover {
+    transform: scale(1.09);
+    box-shadow: 0 10px 30px rgba(50, 150, 255, 0.8), 0 0 40px rgba(50, 200, 255, 0.7); /* Brighter glowing effect */
+  }
+  
+  /* App Logo */
+  .app-logo {
+    width: 80px; /* Adjusted for wider cards */
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Logo Hover Effects */
+.card:hover .app-logo {
+    transform: scale(1.2);
+  }
+  
+  /* App Name */
+.app-name {
+    font-size: 1.5rem; /* Larger text for wider cards */
+    color: inherit; /* Adapt to light or dark mode */
+    margin-bottom: 15px;
+  }
+  
+  /* App Description */
+  .app-description {
+    font-size: 1rem; /* Slightly larger description text */
+    color: inherit;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  /* Launch Button */
+.launch-btn {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  border: none;
+  border-radius: 25px;
+  padding: 8px 16px; /* Adjusted padding */
+  color: #fff;
+  font-size: 0.9rem; /* Smaller button text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(66, 165, 245, 0.6), 0 0 20px rgba(30, 136, 229, 0.5);
+}
+
+
+ .launch-btn:hover {
+  box-shadow: 0 0 20px rgba(66, 165, 245, 1), 0 0 30px rgba(30, 136, 229, 0.8); /* Intense glow */
+  transform: translateY(-3px);
+  
+  body.light-mode .launch-btn {
+    background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  }
+}
+  
+ /* Dark Mode Adjustments */
+ body.dark-mode .launch-btn {
+    background: linear-gradient(135deg, #64b5f6, #2196f3);
+  }
+
+  body.dark-mode .launch-btn:hover {
+    box-shadow: 0 0 25px rgba(100, 181, 246, 1), 0 0 35px rgba(33, 150, 243, 0.9); /* Stronger glow for dark mode */
+  }
